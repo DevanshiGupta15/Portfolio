@@ -1,0 +1,243 @@
+/* ---------------- RESET & BASE ---------------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: radial-gradient(circle at top, #0a0a0a, #000);
+  color: #fff;
+  line-height: 1.65;
+}
+
+/* ---------------- LAYOUT ---------------- */
+.container {
+  max-width: 920px;
+  margin: auto;
+  padding: 56px 24px;
+}
+
+/* ---------------- HERO ---------------- */
+.hero {
+  margin-bottom: 72px;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 6vw, 52px);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.tagline {
+  color: #ff5fa2;
+  font-weight: 500;
+  margin-bottom: 18px;
+  font-size: 16px;
+}
+
+.hero p {
+  max-width: 680px;
+  opacity: 0.9;
+}
+
+/* ---------------- SECTIONS ---------------- */
+.section {
+  margin-top: 72px;
+  padding-top: 48px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+
+/* -------- Notion-style Section Labels -------- */
+/* -------- Notion-style section labels (ONLY work & experience) -------- */
+/* HERO H1 – always big */
+
+
+/* ===== Notion-style section badge (Selected Work, Experience ONLY) ===== */
+/* ===== Pixel-close Notion section badge ===== */
+.section:not(:last-child) > h1,
+.section:not(:last-child) > h2 {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  color: #ff5fa2;                      /* softer Notion pink */
+  background: rgb(39, 39, 36);/* flat highlight */
+
+  padding: 4px 8px;                    /* tighter like Notion */
+  border-radius: 4px;                  /* NOT pill */
+
+  margin-bottom: 32px;
+}
+
+
+
+
+
+/* ---------------- CARDS ---------------- */
+.project,
+.experience {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 24px 24px 22px;
+  margin-bottom: 28px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
+}
+
+.project:hover,
+.experience:hover {
+  transform: translateY(-4px);
+
+  /* STRONGER pink outline */
+  border: 2px solid #ff5fa2;
+
+  /* subtle glow so stars ke upar bhi dikhe */
+  box-shadow:
+    0 0 0 1px rgba(255, 95, 162, 0.6),
+    0 12px 30px rgba(0, 0, 0, 0.7);
+}
+
+
+/* ---------------- HEADINGS ---------------- */
+.project h3,
+.experience h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #ffd166;
+  font-size: 20px;
+}
+
+/* ---------------- TEXT ---------------- */
+p {
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 0;
+}
+
+.meta {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+/* ---------------- LISTS ---------------- */
+ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+li {
+  margin-bottom: 6px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+ul li::marker {
+  color: #ff5fa2;
+}
+
+/* ---------------- CONTACT ---------------- */
+.section:last-child p {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+/* ---------------- LINKS ---------------- */
+a {
+  color: #4da3ff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #8fc1ff;
+  text-decoration: underline;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 600px) {
+  .container {
+    padding: 40px 18px;
+  }
+
+  .project,
+  .experience {
+    padding: 20px;
+  }
+}
+.hero h1 {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 42px;              /* Notion H1 feel */
+  font-weight: 700;             /* Same as Notion */
+  line-height: 1.2;
+  letter-spacing: -0.015em;     /* Notion-style tight spacing */
+  margin-bottom: 12px;
+}
+/* ===== Notion-style Contact heading ===== */
+
+.section:last-child > h3 {
+  all: unset; /* reset badge / heading interference */
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 24px;      /* ≈ 1.5em Notion H2 */
+  font-weight: 600;
+  line-height: 1.3;
+
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+/* ===== Contact blue strip ===== */
+.contact-section {
+  background: linear-gradient(
+    90deg,
+    rgba(77, 163, 255, 0.15),
+    rgba(77, 163, 255, 0.05)
+  );
+  border-left: 4px solid #4da3ff;
+  padding: 32px 24px;
+  border-radius: 12px;
+}
+
+/* Contact heading */
+.contact-section h2 {
+  margin-top: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Contact links */
+.contact-section a {
+  color: #4da3ff;
+  font-weight: 500;
+}
+
+.contact-section a:hover {
+  text-decoration: underline;
+}
+/* ===== Live animated dark background ===== */
+body {
+  background: #000;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ===== Starfield canvas background ===== */
+#starfield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;      /* content ke peeche */
+  background: black;
+}

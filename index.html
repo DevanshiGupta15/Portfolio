@@ -10,28 +10,53 @@
 </head>
 <body>
   <canvas id="starfield"></canvas>
+  <header class="navbar">
+  <a href="index.html" class="logo">Devanshi.</a>
+
+  <nav class="nav-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="design-work.html">Design Work</a>
+    <a href="contact.html">Contact Me</a>
+  </nav>
+  </header>
 
   <main class="container">
 
     <!-- HERO -->
     <section class="hero">
-      <h1>Devanshi Gupta</h1>
-      <p class="tagline">
-        Aspiring UI/UX Designer | B.Tech CSE | UI/UX Intern Experience
-      </p>
-      <p>
-        Final-year B.Tech CSE student with hands-on experience in UI/UX design
-        through internships and self-initiated projects.
-      </p>
-    </section>
+      <div class="hero-glow"></div>
+
+      <div class="hero-card">
+        <p class="hero-label">AI • FRONTEND • UI/UX</p>
+
+        <h1>Devanshi Gupta</h1>
+
+    <p class="tagline">
+      Building intelligent and user-focused digital experiences.
+    </p>
+
+    <p class="hero-desc">
+      Final-year B.Tech CSE student passionate about AI-powered applications,
+      frontend development, and modern UI/UX experiences.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#projects" class="hero-btn primary-btn">View Projects</a>
+
+      <a href="YOUR_RESUME_LINK" target="_blank" class="hero-btn secondary-btn">
+        Resume
+      </a>
+    </div>
+  </div>
+</section>
 
     <!-- SELECTED WORK -->
     <section class="section">
       <h2>SELECTED WORK ✨</h2>
-
+      <!--
       <div class="project">
+        
         <h3>Placement Prep Dashboard</h3>
-          
         <p>
           A web dashboard concept designed to help final-year students track
           placement opportunities, deadlines, and interview stages.
@@ -42,12 +67,8 @@
           <li>Clean dashboard layout</li>
           <li>Status-based tracking</li>
         </ul>
-        <a href="https://www.behance.net/gallery/240546363/Placement-Prep-Dashboard"
-       target="_blank">
-      Behance
-    </a>
       </div>
-
+      
       <div class="project">
         <h3>Interactive Whiteboard</h3>
         <p>
@@ -62,15 +83,15 @@
       Readme
     </a>
       </div>
-
+      -->
       <div class="project">
-        <h3>NoteGenius (Ongoing)</h3>
+        <h3>NoteGenius</h3>
         <p>
           An AI-powered platform that generates summaries and quizzes from video,
           text, or audio.
         </p>
         <p class="meta">
-          Role: UX Design & Frontend Support · Tools: Django, Web Technologies
+          Role: UX Design & Frontend Support · Tools: Web Technologies , Python, AI APIs
         </p>
         <ul>
           <li>Simple and clear user flows</li>
@@ -186,31 +207,7 @@
 </section>
 
 
-    <!-- CONTACT -->
-    <section class="section contact-section">
-  <h2>Contact & Links 📬</h2>
-
-  <p>
-    Email:
-    <a href="mailto:devanshi.gupta@email.com">
-      devanshi.gupta@email.com
-    </a>
-  </p>
-
-  <p>
-    LinkedIn:
-    <a href="https://linkedin.com/in/devanshi-gupta15" target="_blank">
-      linkedin.com/in/devanshi-gupta15
-    </a>
-  </p>
-
-  <p>
-    GitHub:
-    <a href="https://github.com/DevanshiGupta15" target="_blank">
-      github.com/DevanshiGupta15
-    </a>
-  </p>
-</section>
+    
 
 
   </main>
@@ -326,5 +323,3 @@ const stars = Array.from({ length: isMobile ? 160 : 260 }, () => ({
 
 </body>
 </html>
-
-

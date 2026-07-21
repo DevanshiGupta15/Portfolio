@@ -766,3 +766,342 @@ main {
     height: 54px;
   }
 }
+
+/* =========================
+   PHOTOSHOP PAGE
+========================= */
+
+.photoshop-page {
+  position: relative;
+  z-index: 2;
+  width: min(1180px, 92%);
+  margin: 0 auto;
+  padding: 140px 0 90px;
+}
+
+.photoshop-heading {
+  margin-bottom: 85px;
+}
+
+.photoshop-label {
+  margin-bottom: 14px;
+  color: #56ff9d;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.photoshop-heading h1 {
+  margin: 0 0 20px;
+  font-size: clamp(3.2rem, 8vw, 6.5rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.photoshop-intro {
+  max-width: 650px;
+  color: #bcbccc;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.photoshop-project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+.photoshop-project {
+  padding-bottom: 85px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.photoshop-project:last-child {
+  border-bottom: none;
+}
+
+.photoshop-project h2 {
+  max-width: 1000px;
+  margin: 0 0 42px;
+  color: #ffffff;
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.photoshop-images-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 28px;
+}
+
+.photoshop-image-box {
+  position: relative;
+  width: 100%;
+  height: 390px;
+  padding: 0;
+  overflow: hidden;
+  border: 2px solid #43f58a;
+  border-radius: 24px;
+  background: rgba(67, 245, 138, 0.05);
+  box-shadow: 0 0 0 rgba(67, 245, 138, 0);
+  cursor: zoom-in;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.photoshop-image-box:hover {
+  transform: translateY(-7px);
+  border-color: #73ffad;
+  box-shadow: 0 20px 55px rgba(67, 245, 138, 0.18);
+}
+
+.photoshop-image-box:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 5px;
+}
+
+.photoshop-image-box img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.photoshop-image-box:hover img {
+  transform: scale(1.035);
+}
+
+.image-type {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 2;
+  padding: 8px 15px;
+  border: 1px solid rgba(67, 245, 138, 0.6);
+  border-radius: 999px;
+  background: rgba(7, 9, 14, 0.86);
+  color: #70ffa9;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+}
+
+.photoshop-arrow {
+  color: #ff3f4f;
+  font-size: clamp(3.5rem, 7vw, 6rem);
+  line-height: 1;
+  filter: drop-shadow(0 0 13px rgba(255, 63, 79, 0.55));
+  animation: photoshopArrowMove 1.3s ease-in-out infinite;
+}
+
+@keyframes photoshopArrowMove {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(9px);
+  }
+}
+
+
+/* PSD download link */
+
+.psd-download-area {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.psd-download-area p {
+  margin: 0 0 6px;
+  color: #ababba;
+  font-size: 0.9rem;
+}
+
+.psd-download-link {
+  color: #4c9fff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition:
+    color 0.25s ease,
+    text-shadow 0.25s ease;
+}
+
+.psd-download-link:hover {
+  color: #8bc4ff;
+  text-shadow: 0 0 12px rgba(76, 159, 255, 0.45);
+}
+
+
+/* Image popup */
+
+body.lightbox-open {
+  overflow: hidden;
+}
+
+.photoshop-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: rgba(3, 5, 10, 0.88);
+  opacity: 0;
+  visibility: hidden;
+  backdrop-filter: blur(12px);
+  transition:
+    opacity 0.28s ease,
+    visibility 0.28s ease;
+}
+
+.photoshop-lightbox.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.photoshop-lightbox img {
+  max-width: min(1050px, 90vw);
+  max-height: 84vh;
+  display: block;
+  object-fit: contain;
+  border: 3px solid #43f58a;
+  border-radius: 20px;
+  background: #090b10;
+  box-shadow:
+    0 0 30px rgba(67, 245, 138, 0.25),
+    0 30px 90px rgba(0, 0, 0, 0.65);
+  transform: scale(0.88);
+  transition: transform 0.3s ease;
+}
+
+.photoshop-lightbox.show img {
+  transform: scale(1);
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 24px;
+  right: 30px;
+  z-index: 10000;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border: 1px solid rgba(67, 245, 138, 0.55);
+  border-radius: 50%;
+  background: rgba(8, 10, 15, 0.9);
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.lightbox-close:hover {
+  transform: rotate(90deg);
+  border-color: #43f58a;
+  background: rgba(67, 245, 138, 0.13);
+}
+
+
+/* Responsive */
+
+@media (max-width: 850px) {
+  .photoshop-page {
+    padding-top: 115px;
+  }
+
+  .photoshop-heading {
+    margin-bottom: 65px;
+  }
+
+  .photoshop-project-list {
+    gap: 75px;
+  }
+
+  .photoshop-project {
+    padding-bottom: 65px;
+  }
+
+  .photoshop-images-row {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .photoshop-arrow {
+    justify-self: center;
+    transform: rotate(90deg);
+    animation: photoshopArrowMoveMobile 1.3s ease-in-out infinite;
+  }
+
+  @keyframes photoshopArrowMoveMobile {
+    0%,
+    100% {
+      transform: rotate(90deg) translateX(0);
+    }
+
+    50% {
+      transform: rotate(90deg) translateX(9px);
+    }
+  }
+
+  .photoshop-image-box {
+    height: 340px;
+  }
+}
+
+@media (max-width: 520px) {
+  .photoshop-page {
+    width: 90%;
+    padding-top: 105px;
+  }
+
+  .photoshop-heading h1 {
+    font-size: 3rem;
+  }
+
+  .photoshop-project h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+  }
+
+  .photoshop-image-box {
+    height: 280px;
+    border-radius: 18px;
+  }
+
+  .photoshop-lightbox {
+    padding: 18px;
+  }
+
+  .photoshop-lightbox img {
+    max-width: 94vw;
+    max-height: 80vh;
+    border-radius: 14px;
+  }
+
+  .lightbox-close {
+    top: 15px;
+    right: 15px;
+    width: 44px;
+    height: 44px;
+  }
+}

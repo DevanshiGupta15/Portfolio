@@ -2,123 +2,269 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Photoshop Designs | Devanshi Gupta</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
 
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <canvas id="starfield"></canvas>
+  <canvas id="spaceCanvas"></canvas>
 
-  <header class="navbar">
-    <a href="index.html" class="logo">Devanshi.</a>
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">Devanshi.</a>
 
-    <nav class="nav-links">
+    <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="design-work.html" class="active">Design Work</a>
       <a href="contact.html">Contact Me</a>
-    </nav>
-  </header>
+    </div>
+  </nav>
 
-  <main>
+  <main class="photoshop-page">
 
-    <section class="page-hero gallery-hero">
-      <a href="design-work.html" class="back-link">
-        ← Back to Design Work
-      </a>
-
-      <p class="eyebrow green-text">Adobe Photoshop</p>
-
+    <section class="photoshop-heading">
+      <p class="photoshop-label">Design Work</p>
       <h1>Photoshop Designs</h1>
 
-      <p>
-        A collection of posters, photo edits, digital compositions,
-        social media creatives and visual experiments made in Photoshop.
+      <p class="photoshop-intro">
+        A collection of before-and-after Photoshop transformations.
+        Click any image to view it in a larger size.
       </p>
     </section>
 
-    <section class="design-gallery">
+    <section class="photoshop-project-list">
 
-      <article class="gallery-card">
-        <div class="gallery-image">
-          <img
-            src="images/photoshop/photoshop-1.jpg"
-            alt="Photoshop design by Devanshi Gupta"
+      <!-- Project 1 -->
+
+      <article class="photoshop-project">
+
+        <h2>
+          1. What if Leaning Tower of Pisa Be Straight Up?
+        </h2>
+
+        <div class="photoshop-images-row">
+
+          <button
+            class="photoshop-image-box"
+            type="button"
+            onclick="openImage('images/photoshop/pisaorg.jpg', 'Original Leaning Tower of Pisa image')"
           >
+            <span class="image-type">Before</span>
+
+            <img
+              src="images/photoshop/pisa org.jpg"
+              alt="Original Leaning Tower of Pisa"
+            >
+          </button>
+
+          <div class="photoshop-arrow" aria-hidden="true">
+            ➜
+          </div>
+
+          <button
+            class="photoshop-image-box"
+            type="button"
+            onclick="openImage('images/photoshop/pisa.jpg', 'Straightened Leaning Tower of Pisa Photoshop design')"
+          >
+            <span class="image-type">After</span>
+
+            <img
+              src="images/photoshop/pisa.jpg"
+              alt="Straightened Leaning Tower of Pisa"
+            >
+          </button>
+
         </div>
 
-        <div class="gallery-info">
-          <h3>Design Title One</h3>
-          <p>Poster Design · Adobe Photoshop</p>
+        <div class="psd-download-area">
+          <p>Download editable Photoshop file:</p>
+
+          <a
+            href="images/photoshop/pisa.psd"
+            class="psd-download-link"
+            download="pisa.psd"
+          >
+            pisa.psd
+          </a>
         </div>
+
       </article>
 
-      <article class="gallery-card">
-        <div class="gallery-image">
-          <img
-            src="images/photoshop/photoshop-2.jpg"
-            alt="Photoshop design by Devanshi Gupta"
+
+      <!-- Project 2 -->
+
+      <article class="photoshop-project">
+
+        <h2>
+          2. Creative Outline Text
+        </h2>
+
+        <div class="photoshop-images-row">
+
+          <button
+            class="photoshop-image-box"
+            type="button"
+            onclick="openImage('images/photoshop/photo frame.jpg', 'Original image before creative outline text effect')"
           >
+            <span class="image-type">Before</span>
+
+            <img
+              src="images/photoshop/photo frame.jpg"
+              alt="Before creative outline text effect"
+            >
+          </button>
+
+          <div class="photoshop-arrow" aria-hidden="true">
+            ➜
+          </div>
+
+          <button
+            class="photoshop-image-box"
+            type="button"
+            onclick="openImage('images/photoshop/CREATIVE OUTLINE TEXT.jpg', 'Creative outline text Photoshop design')"
+          >
+            <span class="image-type">After</span>
+
+            <img
+              src="images/photoshop/CREATIVE OUTLINE TEXT.jpg"
+              alt="Creative outline text effect"
+            >
+          </button>
+
         </div>
 
-        <div class="gallery-info">
-          <h3>Design Title Two</h3>
-          <p>Social Media Creative · Adobe Photoshop</p>
-        </div>
+
       </article>
 
-      <article class="gallery-card">
-        <div class="gallery-image">
-          <img
-            src="images/photoshop/photoshop-3.jpg"
-            alt="Photoshop design by Devanshi Gupta"
+
+      <!-- Project 3 -->
+
+      <article class="photoshop-project">
+
+        <h2>
+          3. A Coke Is Better Than a Silver Can!
+        </h2>
+
+        <div class="photoshop-images-row">
+
+          <button
+            class="photoshop-image-box"
+            type="button"
+            onclick="openImage('images/photoshop/download.jpg', 'Original silver can image')"
           >
-        </div>
+            <span class="image-type">Before</span>
 
-        <div class="gallery-info">
-          <h3>Design Title Three</h3>
-          <p>Digital Composition · Adobe Photoshop</p>
-        </div>
-      </article>
+            <img
+              src="images/photoshop/download.jpg"
+              alt="Original silver can"
+            >
+          </button>
 
-      <article class="gallery-card">
-        <div class="gallery-image">
-          <img
-            src="images/photoshop/photoshop-4.jpg"
-            alt="Photoshop design by Devanshi Gupta"
+          <div class="photoshop-arrow" aria-hidden="true">
+            ➜
+          </div>
+
+          <button
+            class="photoshop-image-box"
+            type="button"
+            onclick="openImage('images/photoshop/cocacola.jpg', 'Coke can Photoshop design')"
           >
+            <span class="image-type">After</span>
+
+            <img
+              src="images/photoshop/cocacola.jpg"
+              alt="Coke can Photoshop transformation"
+            >
+          </button>
+
         </div>
 
-        <div class="gallery-info">
-          <h3>Design Title Four</h3>
-          <p>Brand Visual · Adobe Photoshop</p>
+        <div class="psd-download-area">
+          <p>Download editable Photoshop file:</p>
+
+          <a
+            href="images/photoshop/download.psd"
+            class="psd-download-link"
+            download="coke-can.psd"
+          >
+            coke-can.psd
+          </a>
         </div>
+
       </article>
 
     </section>
 
   </main>
 
+
+  <!-- Image Popup -->
+
+  <div
+    class="photoshop-lightbox"
+    id="photoshopLightbox"
+    onclick="closeImage(event)"
+  >
+
+    <button
+      class="lightbox-close"
+      type="button"
+      aria-label="Close image"
+      onclick="closeLightbox()"
+    >
+      ×
+    </button>
+
+    <img
+      id="lightboxImage"
+      src=""
+      alt=""
+    >
+
+  </div>
+
+
+  <script>
+    function openImage(imageSource, imageAlt) {
+      const lightbox = document.getElementById("photoshopLightbox");
+      const lightboxImage = document.getElementById("lightboxImage");
+
+      lightboxImage.src = imageSource;
+      lightboxImage.alt = imageAlt;
+
+      lightbox.classList.add("show");
+      document.body.classList.add("lightbox-open");
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById("photoshopLightbox");
+      const lightboxImage = document.getElementById("lightboxImage");
+
+      lightbox.classList.remove("show");
+      document.body.classList.remove("lightbox-open");
+
+      setTimeout(function () {
+        lightboxImage.src = "";
+      }, 250);
+    }
+
+    function closeImage(event) {
+      if (event.target.id === "photoshopLightbox") {
+        closeLightbox();
+      }
+    }
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closeLightbox();
+      }
+    });
+  </script>
+
   <script src="script.js"></script>
+
 </body>
 </html>

@@ -1459,3 +1459,120 @@ body.modal-open {
     transition: none;
   }
 }
+
+/* =========================================================
+   FINAL HOMEPAGE VISUAL FIX — keep this block at file end
+========================================================= */
+
+body .hero .hero-card > h1 {
+  color: #ffffff !important;
+  -webkit-text-stroke: 1.2px #ffd166 !important;
+  paint-order: stroke fill;
+  text-shadow:
+    0 0 3px #ffd166,
+    0 0 9px rgba(255, 209, 102, 0.95),
+    0 0 20px rgba(255, 209, 102, 0.65),
+    0 0 38px rgba(255, 209, 102, 0.38) !important;
+}
+
+body main .section.portfolio-section > h2.portfolio-heading {
+  all: unset !important;
+  box-sizing: border-box !important;
+  display: block !important;
+  width: 100% !important;
+  margin: 0 auto 48px !important;
+  padding: 0 !important;
+  color: #ffffff !important;
+  background: transparent !important;
+  border: 0 !important;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: clamp(2.6rem, 6vw, 4.8rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.04em !important;
+  text-align: center !important;
+  text-transform: none !important;
+}
+
+body main .section > h2.section-label {
+  all: unset !important;
+  box-sizing: border-box !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  margin: 0 0 32px !important;
+  padding: 4px 8px !important;
+  color: #ff5fa2 !important;
+  background: rgb(39, 39, 36) !important;
+  border-radius: 4px !important;
+  font-family: Inter, system-ui, sans-serif !important;
+  font-size: 30px !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  letter-spacing: 0.02em !important;
+  text-transform: none !important;
+}
+
+body main .portfolio-section .expand-card {
+  border: 2px solid rgba(255, 209, 102, 0.72) !important;
+  box-shadow:
+    0 0 0 1px rgba(255, 209, 102, 0.12),
+    0 0 18px rgba(255, 209, 102, 0.13),
+    0 16px 38px rgba(0, 0, 0, 0.48) !important;
+}
+
+body main .portfolio-section .expand-card:hover,
+body main .portfolio-section .expand-card:focus-visible {
+  border-color: #ffd166 !important;
+  box-shadow:
+    0 0 0 1px rgba(255, 209, 102, 0.38),
+    0 0 30px rgba(255, 209, 102, 0.28),
+    0 24px 55px rgba(0, 0, 0, 0.58) !important;
+}
+
+body .detail-modal .modal-card {
+  max-height: 88vh !important;
+  overflow-y: auto !important;
+}
+
+body .detail-modal .modal-content p,
+body .detail-modal .modal-content .meta,
+body .detail-modal .modal-content ul,
+body .detail-modal .modal-content li {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+body .detail-modal .modal-content ul {
+  margin: 17px 0 12px !important;
+  padding-left: 23px !important;
+}
+
+body .detail-modal .modal-content li {
+  display: list-item !important;
+  margin-bottom: 8px !important;
+}
+
+body .skill-box svg.skill-logo {
+  display: block !important;
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+@media (max-width: 700px) {
+  body main .section.portfolio-section > h2.portfolio-heading {
+    margin-bottom: 34px !important;
+    font-size: clamp(2.35rem, 12vw, 3.25rem) !important;
+  }
+
+  body main .section > h2.section-label {
+    font-size: 24px !important;
+  }
+}

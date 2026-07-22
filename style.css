@@ -1464,15 +1464,12 @@ body.modal-open {
    FINAL HOMEPAGE VISUAL FIX — keep this block at file end
 ========================================================= */
 
-body .hero .hero-card > h1 {
-  color: #ffffff !important;
-  -webkit-text-stroke: 1.2px #ffd166 !important;
-  paint-order: stroke fill;
-  text-shadow:
-    0 0 3px #ffd166,
-    0 0 9px rgba(255, 209, 102, 0.95),
-    0 0 20px rgba(255, 209, 102, 0.65),
-    0 0 38px rgba(255, 209, 102, 0.38) !important;
+body .hero .hero-card > h1{
+    color:#fff !important;
+    -webkit-text-stroke:0.8px #ffd54a !important;
+
+    text-shadow:
+        0 0 5px rgba(255,213,74,.35) !important;
 }
 
 body main .section.portfolio-section > h2.portfolio-heading {

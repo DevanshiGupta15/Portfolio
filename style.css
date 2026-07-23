@@ -1575,3 +1575,131 @@ body .skill-box svg.skill-logo {
     font-size: 24px !important;
   }
 }
+/*================ HERO PHOTO LAYOUT ================*/
+
+.hero-wrapper{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:70px;
+    flex-wrap:wrap;
+    min-height:85vh;
+}
+
+.hero-photo{
+    width:270px;
+    height:270px;
+    border-radius:50%;
+    overflow:hidden;
+    border:3px solid rgba(255,255,255,.9);
+    box-shadow:
+        0 0 15px rgba(255,255,255,.45),
+        0 0 35px rgba(255,220,120,.18);
+    opacity:0;
+    transform:translateX(-450px);
+}
+
+.hero-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.hero-card{
+    max-width:620px;
+}
+
+/*================ LOAD ANIMATIONS ================*/
+
+.hero-photo.show{
+    animation:photoEntry 1.1s ease forwards;
+}
+
+@keyframes photoEntry{
+
+    0%{
+        opacity:0;
+        transform:translateX(-450px);
+    }
+
+    75%{
+        opacity:1;
+        transform:translateX(18px);
+    }
+
+    100%{
+        opacity:1;
+        transform:translateX(0);
+    }
+
+}
+
+@keyframes borderSweep{
+
+    0%{
+        box-shadow:
+        0 0 15px rgba(255,255,255,.45),
+        0 0 30px rgba(255,220,120,.15);
+    }
+
+    50%{
+        box-shadow:
+        0 0 25px rgba(255,255,255,.9),
+        0 0 70px rgba(255,220,120,.55);
+    }
+
+    100%{
+        box-shadow:
+        0 0 15px rgba(255,255,255,.45),
+        0 0 30px rgba(255,220,120,.15);
+    }
+
+}
+
+.hero-photo.glow{
+    animation:
+    borderSweep 1.8s ease;
+}
+
+/*================ INITIAL HIDE ================*/
+
+.hero-role,
+.hero-tagline,
+.hero-description,
+.hero-buttons-hidden{
+    opacity:0;
+}
+
+.projects-hidden,
+.experience-hidden{
+    opacity:0;
+    transform:translateY(80px);
+}
+
+.projects-show,
+.experience-show{
+    opacity:1;
+    transform:translateY(0);
+    transition:1s;
+}
+
+/*================ MOBILE ================*/
+
+@media(max-width:900px){
+
+.hero-wrapper{
+    flex-direction:column;
+    gap:35px;
+}
+
+.hero-photo{
+    width:210px;
+    height:210px;
+}
+
+.hero-card{
+    text-align:center;
+}
+
+}

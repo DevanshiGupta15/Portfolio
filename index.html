@@ -26,30 +26,37 @@
     <section class="hero">
       <div class="hero-glow"></div>
 
-      <div class="hero-card"><br>
-        <h1>Devanshi Gupta</h1>
-        <h3 class="hero-label" style="color: gray;">AI • FRONTEND • UI/UX</h3>
+      <div class="hero-wrapper">
 
-    <p class="tagline">
+        <div class="hero-photo">
+          <img src="images/profile.png" alt="Devanshi Gupta">
+        </div>
+
+        <div class="hero-card"> 
+        <h1 id="heroName"></h1>
+        <h3 class="hero-label hero-role" style="color:gray;">AI • FRONTEND • UI/UX</h3>
+
+    <p class="tagline hero-tagline">
       Building intelligent and user-focused digital experiences.
     </p>
 
-    <p class="hero-desc">
+    <p class="hero-desc hero-description">
       Final-year B.Tech CSE student passionate about AI-powered applications,
       frontend development, and modern UI/UX experiences.
     </p>
 
-    <div class="hero-buttons">
+    <div class="hero-buttons hero-buttons-hidden">
 
       <a href="assets/resume/Devanshi Gupta CV.pdf" target="_blank" class="hero-btn secondary-btn">
         View Resume
       </a>
     </div>
+    </div>
   </div>
 </section>
 
     <!-- SELECTED WORK -->
-    <section class="section portfolio-section" id="projects">
+    <section class="section portfolio-section projects-hidden" id="projects">
       <h2 class="portfolio-heading">Selected Work</h2>
 
       <div class="project-grid compact-grid">
@@ -131,7 +138,7 @@
     </section>
 
     <!-- EXPERIENCE -->
-    <section class="section portfolio-section" id="experience">
+    <section class="section portfolio-section experience-hidden" id="experience">
       <h2 class="portfolio-heading">Experience</h2>
 
       <div class="experience-grid compact-grid">
@@ -390,6 +397,120 @@ const stars = Array.from({ length: isMobile ? 160 : 260 }, () => ({
       closeCard();
     }
   });
+  /* ================= HERO INTRO ANIMATION ================= */
+
+const heroPhoto = document.querySelector(".hero-photo");
+const heroName = document.getElementById("heroName");
+const heroRole = document.querySelector(".hero-role");
+const heroTag = document.querySelector(".hero-tagline");
+const heroDesc = document.querySelector(".hero-description");
+const heroBtns = document.querySelector(".hero-buttons");
+const projects = document.getElementById("projects");
+const experience = document.getElementById("experience");
+
+const fullName = "Hey, I'm Devanshi Gupta";
+
+function typeWriter(element, text, speed = 70, callback = null) {
+    let i = 0;
+    element.innerHTML = "";
+
+    function typing() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typing, speed);
+        } else if (callback) {
+            callback();
+        }
+    }
+
+    typing();
+}
+
+const firstLoad = !sessionStorage.getItem("heroPlayed");
+
+if (firstLoad) {
+
+    sessionStorage.setItem("heroPlayed", "yes");
+
+    heroPhoto.classList.add("show");
+
+    setTimeout(() => {
+
+        heroPhoto.classList.add("glow");
+
+        typeWriter(heroName, fullName, 65, () => {
+
+            heroRole.style.transition = ".8s";
+            heroRole.style.opacity = "1";
+
+            setTimeout(() => {
+
+                heroTag.style.transition = ".8s";
+                heroTag.style.opacity = "1";
+
+                setTimeout(() => {
+
+                    heroDesc.style.transition = ".8s";
+                    heroDesc.style.opacity = "1";
+
+                    setTimeout(() => {
+
+                        heroBtns.style.transition = ".8s";
+                        heroBtns.style.opacity = "1";
+
+                        setTimeout(() => {
+
+                            projects.classList.remove("projects-hidden");
+                            projects.classList.add("projects-show");
+
+                        }, 400);
+
+                    }, 500);
+
+                }, 400);
+
+            }, 350);
+
+        });
+
+    }, 1100);
+
+}
+else{
+
+    heroPhoto.style.opacity = "1";
+    heroPhoto.style.transform = "translateX(0)";
+    heroName.innerHTML = fullName;
+    heroRole.style.opacity = "1";
+    heroTag.style.opacity = "1";
+    heroDesc.style.opacity = "1";
+    heroBtns.style.opacity = "1";
+    projects.classList.remove("projects-hidden");
+    projects.classList.add("projects-show");
+    experience.classList.remove("experience-hidden");
+    experience.classList.add("experience-show");
+
+}
+
+/* Experience reveal */
+
+let expShown = false;
+
+window.addEventListener("scroll", () => {
+
+    if(expShown) return;
+
+    if(window.scrollY > 250){
+
+        expShown = true;
+
+        experience.classList.remove("experience-hidden");
+        experience.classList.add("experience-show");
+
+    }
+
+});
 
   animate();
 </script>
